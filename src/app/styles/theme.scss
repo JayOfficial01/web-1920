@@ -1,0 +1,19 @@
+$primaryColor: #23ce6b;
+$secondaryColor: #08083d;
+$whiteColor: #fff;
+$lightBlueColor: #6184d8;
+$orangeColor: #e86f3a;
+$lightGreenColor: #23ce6b80;
+
+$topToBottom: linear-gradient(to bottom, #6184d8 0%, #08083d 100%);
+$leftToRight: linear-gradient(to right, #6184d8 0%, #08083d 100%);
+$diagonal: linear-gradient(135deg, #4d80fb 0%, #23ce6b 100%);
+
+$smallDevices: 425px;
+$mobiles: 600px;
+$mediumDevices: 768px;
+$tablets: 900px;
+$largeDevices: 1024px;
+$laptops: 1200px;
+
+$customTransiiton: 0.3s all linear;

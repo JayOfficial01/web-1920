@@ -1,0 +1,136 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/theme.scss";
+
+.banner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  border-bottom: 0.2rem solid $whiteColor;
+  padding: 1rem;
+
+  z-index: 3;
+
+  &.background-active {
+    background: $secondaryColor;
+  }
+
+  .menubar-container {
+    @include Flexbox;
+
+    .bars-wrapper {
+      position: relative;
+
+      cursor: pointer;
+      display: none;
+
+      &.btn-active {
+        .bar {
+          &:first-child {
+            transform: translateY(0) rotate(45deg);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:last-child {
+            transform: translateY(-0.55rem) rotate(-45deg);
+          }
+        }
+      }
+
+      @media (max-width: $mediumDevices) {
+        display: block;
+      }
+
+      .bar {
+        content: "";
+        background: $whiteColor;
+
+        width: 2rem;
+        height: 0.1rem;
+        margin-bottom: 0.5rem;
+        transition: $customTransiiton;
+      }
+    }
+
+    .logo {
+      flex: 1;
+
+      color: $whiteColor;
+      font-size: 2rem;
+      font-weight: 600;
+
+      @media (max-width: $mediumDevices) {
+        text-align: center;
+      }
+    }
+
+    .menubar {
+      @include Flexbox($justify: space-between);
+
+      @media (max-width: $mediumDevices) {
+        position: fixed;
+        top: 5.2rem;
+        left: -100%;
+
+        width: 100%;
+        height: 90vh;
+        background: $secondaryColor;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        transition: $customTransiiton;
+      }
+
+      &.menubar-active {
+        left: 0;
+      }
+
+      .menubar-wrapper {
+        @include Flexbox($justify: space-between);
+
+        list-style: none;
+
+        @media (max-width: $mediumDevices) {
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 3rem 0;
+          width: 100%;
+        }
+
+        .menubar-item {
+          margin-left: 3rem;
+
+          .menubar-item-link {
+            color: $whiteColor;
+            font-size: 1.1rem;
+            font-weight: 300;
+
+            transition: $customTransiiton;
+
+            &:hover {
+              color: $primaryColor;
+            }
+
+            @media (max-width: $mediumDevices) {
+              display: block;
+              font-size: 1.5rem;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+
+      .contact-btn {
+        @include CommonButton($shadow: unset, $padding: 0.8rem 3rem);
+
+        margin-left: 3rem;
+      }
+    }
+  }
+}

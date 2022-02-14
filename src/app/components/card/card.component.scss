@@ -1,0 +1,22 @@
+.card-wrapper {
+  .card-thumbhnail {
+    display: block;
+
+    .card-image {
+      max-width: 100%;
+    }
+  }
+
+  .card-details {
+    padding: 1rem 3rem;
+
+    .heading {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+    }
+
+    .description {
+      font-size: 1.2rem;
+    }
+  }
+}

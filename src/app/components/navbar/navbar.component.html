@@ -1,0 +1,33 @@
+<section class="banner-wrapper" [class.background-active]="backgroundActive">
+  <article class="container">
+    <nav class="menubar-container">
+      <article
+        class="bars-wrapper"
+        [class.btn-active]="btnActive"
+        (click)="onBtnActive()"
+      >
+        <article class="bar"></article>
+        <article class="bar"></article>
+        <article class="bar"></article>
+      </article>
+
+      <a href="#" class="logo">Jahangir Khan</a>
+
+      <article class="menubar" [class.menubar-active]="btnActive">
+        <ul class="menubar-wrapper">
+          <li class="menubar-item">
+            <a href="#" class="menubar-item-link">How it works</a>
+          </li>
+          <li class="menubar-item">
+            <a href="#" class="menubar-item-link">Franchise list</a>
+          </li>
+          <li class="menubar-item">
+            <a href="#" class="menubar-item-link">Franchise Guide</a>
+          </li>
+        </ul>
+
+        <button class="contact-btn">contact</button>
+      </article>
+    </nav>
+  </article>
+</section>

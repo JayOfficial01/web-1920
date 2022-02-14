@@ -1,0 +1,101 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/theme.scss";
+
+.footer-section {
+  background: url("../../../assets/images/footer-bg.png") no-repeat;
+  background-size: cover;
+
+  color: $whiteColor;
+  padding: 2rem 1.5rem;
+
+  .contact-wrpper {
+    text-align: right;
+
+    .title {
+      font-size: 1.2rem;
+    }
+
+    .contact-info {
+      padding: 1rem 0;
+
+      .contact-detail {
+        @include Flexbox($justify: flex-end);
+
+        padding: 0.5rem 0;
+
+        .text {
+          font-size: 1.1rem;
+          margin-right: 0.5rem;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
+  .social-sites {
+    text-align: right;
+
+    .title {
+      font-size: 1.2rem;
+    }
+
+    .social-icons-wrapper {
+      @include Flexbox($justify: flex-end);
+
+      list-style: none;
+      margin-top: 1rem;
+
+      .social-icon {
+        margin-left: 1rem;
+
+        .social-icon-link {
+          .icon {
+            width: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-belt {
+    @include Flexbox($justify: flex-end);
+
+    text-align: right;
+
+    @media (max-width: $largeDevices) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .footer-links-wrapper {
+      @include Flexbox;
+
+      list-style: none;
+      margin-right: 10rem;
+
+      @media (max-width: $largeDevices) {
+        margin: 2rem 0;
+        flex-direction: column;
+      }
+
+      .footer-item {
+        margin-left: 10rem;
+
+        @media (max-width: $largeDevices) {
+          margin-bottom: 1rem;
+        }
+
+        .footer-item-link {
+          color: $whiteColor;
+          font-size: 1.1rem;
+          font-weight: 100;
+        }
+      }
+    }
+
+    .copyright-text {
+      font-size: 1.1rem;
+      font-weight: 100;
+    }
+  }
+}

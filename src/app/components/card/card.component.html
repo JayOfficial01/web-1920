@@ -1,0 +1,13 @@
+<figure class="card-wrapper">
+  <picture class="card-thumbhnail">
+    <img src="{{ image }}" alt="{{ heading }}" class="card-image" />
+  </picture>
+
+  <figcaption class="card-details">
+    <h3 class="heading">{{ heading }}</h3>
+
+    <p class="description" *ngIf="description">
+      {{ description }}
+    </p>
+  </figcaption>
+</figure>

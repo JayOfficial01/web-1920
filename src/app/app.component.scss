@@ -1,0 +1,501 @@
+@import "./styles/mixin.scss";
+
+.banner-wrapper {
+  background: url("../assets/images/banner-bg.png") no-repeat;
+  background-size: cover;
+  background-position: top;
+
+  @media (max-width: $tablets) {
+    background-size: 219% 100%;
+    background-position: right top;
+  }
+
+  .banner {
+    padding-top: 12rem;
+    padding-bottom: 5rem;
+
+    @media (max-width: $tablets) {
+      text-align: center;
+    }
+
+    .banner-details {
+      color: $whiteColor;
+
+      .title {
+        margin-bottom: 0.5rem;
+      }
+
+      .heading {
+        display: inline-block;
+        background: $lightBlueColor;
+
+        padding: 0.5rem 1.5rem;
+        margin: 0.5rem 0 1.5rem 0;
+      }
+
+      .description {
+        padding: 1rem 0;
+        margin-bottom: 6rem;
+      }
+
+      .franchise-btn {
+        @include CommonButton($radius: 5rem, $padding: 1rem 3rem);
+        @include Flexbox();
+
+        transition: $customTransiiton;
+
+        &:hover {
+          transform: translateY(-1rem);
+        }
+
+        @media (max-width: $tablets) {
+          margin: 0 auto;
+        }
+
+        .btn-icon {
+          width: 1.5rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .banner-image-wrapper {
+      @media (max-width: $tablets) {
+        margin-top: 5rem;
+      }
+      .banner-image {
+        max-width: 45rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.points-wrapper {
+  color: $secondaryColor;
+  padding: 7rem;
+
+  @media (max-width: $mobiles) {
+    padding: 2rem;
+  }
+
+  .title {
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .points-container {
+    padding: 2rem 0;
+    max-width: 50rem;
+    margin: 0 auto;
+
+    .point {
+      @include Flexbox($justify: flex-start);
+
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+
+      .icon {
+        width: 1.8rem;
+        margin-right: 3rem;
+      }
+    }
+  }
+}
+
+.malls-details {
+  background: $secondaryColor;
+  color: $whiteColor;
+
+  padding: 3rem 1.5rem;
+  text-align: center;
+
+  .title {
+    padding: 1rem;
+
+    @media (max-width: $mediumDevices) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .description {
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .malls-container {
+    @include GridStyle($gap: 5rem, $column: 1fr 29rem 1fr);
+
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-top: 6.5rem;
+  }
+}
+
+.live-sessions-wrapper {
+  position: relative;
+  background-color: $lightBlueColor;
+
+  color: $whiteColor;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  .live-sessions-details {
+    .heading {
+      color: $primaryColor;
+    }
+
+    .title {
+      padding: 1rem 0 2rem 0;
+    }
+
+    .description {
+      padding-right: 7rem;
+
+      @media (max-width: $largeDevices) {
+        padding-right: unset;
+      }
+    }
+
+    .read-more-button {
+      display: block;
+      color: $whiteColor;
+
+      font-size: 1.2rem;
+      margin-top: 2rem;
+
+      transition: $customTransiiton;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  .session-images {
+    @include Flexbox($justify: flex-end);
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 29rem;
+
+    @media (max-width: $largeDevices) {
+      display: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.what-we-do {
+  color: $secondaryColor;
+
+  padding: 5rem 1.5rem;
+  text-align: center;
+
+  .what-we-do-wrapper {
+    @include GridStyle();
+
+    margin-top: 6rem;
+
+    ::ng-deep .card-wrapper {
+      .card-thumbhnail {
+        width: 12rem;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.site-steps {
+  background: $topToBottom;
+  color: $whiteColor;
+  padding: 5rem 1.5rem;
+  opacity: 0.9;
+
+  .title {
+    text-align: center;
+  }
+
+  .steps-wrapper {
+    max-width: 74rem;
+    margin: 4rem auto;
+    padding: 1.5rem;
+
+    .details-card {
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        .dropdown-icon-wrapper {
+          display: none;
+        }
+      }
+
+      .card-info {
+        @include GridStyle($column: 1fr auto);
+
+        margin-bottom: 3rem;
+
+        @media (max-width: $mediumDevices) {
+          grid-template-columns: 1fr;
+        }
+
+        figcaption {
+          @media (max-width: $mediumDevices) {
+            order: 2;
+            margin-top: 3rem;
+          }
+
+          .heading {
+            color: $primaryColor;
+          }
+
+          .card-title {
+            padding: 0.5rem 0 1rem 0;
+          }
+        }
+
+        .card-icon-wrapper {
+          @include Flexbox;
+
+          background: $diagonal;
+
+          width: 7rem;
+          height: 7rem;
+          border-radius: 50%;
+          padding: 2rem;
+
+          @media (max-width: $mediumDevices) {
+            order: 1;
+          }
+
+          .icon {
+            max-width: 100%;
+          }
+        }
+      }
+
+      .dropdown-icon-wrapper {
+        @media (max-width: $mediumDevices) {
+          text-align: center;
+        }
+
+        .dropdown-icon {
+          width: 3rem;
+
+          margin: 0 auto;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .notification {
+    max-width: 50rem;
+    margin: 4rem auto;
+    border: 0.1rem solid $whiteColor;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    text-align: center;
+    box-shadow: 2px 5px 5px 0px rgba(92, 94, 216, 0.39);
+
+    .heading {
+      padding: 2rem 0;
+    }
+
+    .description {
+      padding: 1rem 2rem;
+    }
+  }
+}
+
+.macdonals {
+  background: url(../assets/images/malls/macdonals.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: right center;
+  background-color: $secondaryColor;
+  color: $whiteColor;
+
+  padding: 6rem 1.5rem;
+
+  @media (max-width: $mediumDevices) {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .title {
+    padding: 1.5rem 0;
+
+    span {
+      color: $primaryColor;
+    }
+  }
+
+  .description {
+    font-size: 1.3rem;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .call-btn {
+    @include CommonButton($radius: 5rem, $padding: 1.6rem 3rem);
+  }
+}
+
+.testimonails {
+  background: url(../assets/images/malls/mall.png) no-repeat;
+  background-size: cover;
+
+  padding: 3rem 0 0 0;
+
+  .section-header {
+    color: $whiteColor;
+    text-align: center;
+
+    .title {
+      padding: 2rem 0;
+    }
+  }
+
+  .testimonials-container {
+    @include GridStyle(
+      $column: repeat(auto-fill, minmax(22rem, 1fr)),
+      $gap: 0,
+      $align: flex-start
+    );
+    margin-top: 2rem;
+
+    .testimonial-card {
+      color: $whiteColor;
+
+      padding: 3rem 2rem;
+      text-align: center;
+
+      .quote-icon {
+        width: 3.5rem;
+      }
+
+      .description {
+        padding: 3rem 0;
+        font-size: 1rem;
+        height: 10rem;
+      }
+
+      .user-profile {
+        position: relative;
+        width: 17.5rem;
+        height: 17.5rem;
+        margin: 0 auto;
+        border-radius: 50%;
+
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+          .icon-wrapper {
+            background-color: rgba(219, 22, 22, 0.644);
+          }
+        }
+
+        .icon-wrapper {
+          @include Flexbox;
+
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          background: rgba(0, 0, 0, 0.644);
+          padding: 1rem 3rem;
+          border-radius: 0.5rem;
+
+          .video-icon {
+            margin-left: 0.5rem;
+            max-width: 100%;
+          }
+        }
+      }
+
+      .name {
+        margin-top: 2rem;
+        padding: 0.6rem 0;
+      }
+    }
+  }
+}
+
+.certified-wrapper {
+  background: $leftToRight;
+  color: $whiteColor;
+
+  text-align: center;
+  padding: 7rem 1.5rem;
+
+  .certficate-details {
+    max-width: 90rem;
+    margin: 0 auto;
+
+    .title {
+      margin-bottom: 2rem;
+    }
+
+    .certificate-logo {
+      width: 20rem;
+    }
+
+    .description {
+      font-size: 1.3rem;
+      padding: 2rem 0;
+    }
+
+    .sub-heading {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 4rem;
+    }
+
+    .call-btn {
+      @include CommonButton($radius: 5rem);
+    }
+  }
+}
+
+.contact-details {
+  padding: 5rem 1.5rem;
+  color: $secondaryColor;
+
+  .contact-image {
+    width: 50rem;
+
+    @media (max-width: $largeDevices) {
+      display: none;
+    }
+  }
+
+  .contact-info {
+    @media (max-width: $largeDevices) {
+      text-align: center;
+    }
+
+    .sub-heading {
+      font-size: 1.8rem;
+    }
+
+    .title {
+      padding: 2rem 0;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .call-btn {
+      @include CommonButton($radius: 5rem);
+    }
+  }
+}

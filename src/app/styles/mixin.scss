@@ -1,0 +1,40 @@
+@import "./theme.scss";
+
+@mixin Flexbox($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin GridStyle($column: repeat(3, 1fr), $gap: 1rem, $align: center) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-gap: $gap;
+  align-items: $align;
+
+  @media (max-width: $tablets) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $mediumDevices) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin CommonButton(
+  $padding: 1.5rem 3rem,
+  $radius: 0.5rem,
+  $shadow: 0 0.8rem 0.8rem $lightGreenColor
+) {
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  font-size: 1.2rem;
+
+  background: $primaryColor;
+  color: $whiteColor;
+  border: none;
+
+  cursor: pointer;
+}
